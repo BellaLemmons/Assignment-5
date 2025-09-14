@@ -1,4 +1,5 @@
 ### Data ###
+from operator import truediv
 
 recipes = {
     "small": {
@@ -46,16 +47,24 @@ class SandwichMachine:
     def check_resources(self, ingredients):
         """Returns True when order can be made, False if ingredients are insufficient."""
 
+
     def process_coins(self):
         """Returns the total calculated from coins inserted.
            Hint: include input() function here, e.g. input("how many quarters?: ")"""
+
+
+
 
     def transaction_result(self, coins, cost):
         """Return True when the payment is accepted, or False if money is insufficient.
            Hint: use the output of process_coins() function for cost input"""
 
+
     def make_sandwich(self, sandwich_size, order_ingredients):
         """Deduct the required ingredients from the resources.
            Hint: no output"""
 
+
+
 ### Make an instance of SandwichMachine class and write the rest of the codes ###
+
