@@ -89,4 +89,23 @@ class SandwichMachine:
 
 
 ### Make an instance of SandwichMachine class and write the rest of the codes ###
+sandwich_maker = SandwichMachine(resources) ##uses the global variable resources as parameter for the new machine class
 
+user_input = str(input("What would you like? {small/medium/large/report/off} "))
+
+while True:
+    if user_input == "report":
+        print("Bread: " + str(sandwich_maker.machine_resources["bread"]) + "\n")
+        print("Ham: " + str(sandwich_maker.machine_resources["ham"]) + "\n")
+        print("Cheese: " + str(sandwich_maker.machine_resources["cheese"]) + "\n")
+        user_input = str(input("What would you like? {small/medium/large/report/off} "))
+    elif user_input == "off":
+        break
+    else:
+        sandwich_price = recipes[user_input]["cost"]
+        sandwich_ingredients = recipes[user_input]["ingredients"]
+        user_payment = sandwich_maker.process_coins()
+        if sandwich_maker.check_resources(sandwich_ingredients):
+            if sandwich_maker.transaction_result(user_payment, sandwich_price):
+                sandwich_maker.make_sandwich(user_input, sandwich_ingredients)
+        user_input = str(input("What would you like? {small/medium/large/report/off} "))
