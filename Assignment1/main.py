@@ -81,6 +81,10 @@ class SandwichMachine:
     def make_sandwich(self, sandwich_size, order_ingredients):
         """Deduct the required ingredients from the resources.
            Hint: no output"""
+        self.machine_resources["bread"] = self.machine_resources["bread"] - order_ingredients["bread"]
+        self.machine_resources["ham"] = self.machine_resources["ham"] - order_ingredients["ham"]
+        self.machine_resources["cheese"] = self.machine_resources["cheese"] - order_ingredients["cheese"]
+        print("Enjoy your " + str(sandwich_size) + " sandwich!")
 
 
 
